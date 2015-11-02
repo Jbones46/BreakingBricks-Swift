@@ -14,6 +14,13 @@
 		D0463C491BE64A8D008AE9F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0463C471BE64A8D008AE9F2 /* Main.storyboard */; };
 		D0463C4B1BE64A8D008AE9F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0463C4A1BE64A8D008AE9F2 /* Assets.xcassets */; };
 		D0463C4E1BE64A8D008AE9F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0463C4C1BE64A8D008AE9F2 /* LaunchScreen.storyboard */; };
+		D0463C5B1BE64B1F008AE9F2 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = D0463C551BE64B1F008AE9F2 /* ball.png */; };
+		D0463C5C1BE64B1F008AE9F2 /* ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0463C561BE64B1F008AE9F2 /* ball@2x.png */; };
+		D0463C5D1BE64B1F008AE9F2 /* brick.png in Resources */ = {isa = PBXBuildFile; fileRef = D0463C571BE64B1F008AE9F2 /* brick.png */; };
+		D0463C5E1BE64B1F008AE9F2 /* brick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0463C581BE64B1F008AE9F2 /* brick@2x.png */; };
+		D0463C5F1BE64B1F008AE9F2 /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = D0463C591BE64B1F008AE9F2 /* paddle.png */; };
+		D0463C601BE64B1F008AE9F2 /* paddle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0463C5A1BE64B1F008AE9F2 /* paddle@2x.png */; };
+		D05C3AD71BE6B135001351FF /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C3AD61BE6B135001351FF /* Ball.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		D0463C4A1BE64A8D008AE9F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0463C4D1BE64A8D008AE9F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0463C4F1BE64A8D008AE9F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0463C551BE64B1F008AE9F2 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = ../ball.png; sourceTree = "<group>"; };
+		D0463C561BE64B1F008AE9F2 /* ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ball@2x.png"; path = "../ball@2x.png"; sourceTree = "<group>"; };
+		D0463C571BE64B1F008AE9F2 /* brick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brick.png; path = ../brick.png; sourceTree = "<group>"; };
+		D0463C581BE64B1F008AE9F2 /* brick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brick@2x.png"; path = "../brick@2x.png"; sourceTree = "<group>"; };
+		D0463C591BE64B1F008AE9F2 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paddle.png; path = ../paddle.png; sourceTree = "<group>"; };
+		D0463C5A1BE64B1F008AE9F2 /* paddle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "paddle@2x.png"; path = "../paddle@2x.png"; sourceTree = "<group>"; };
+		D05C3AD61BE6B135001351FF /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,8 @@
 		D0463C3E1BE64A8D008AE9F2 /* Breaking Bricks */ = {
 			isa = PBXGroup;
 			children = (
+				D05C3AD51BE6B117001351FF /* Sprites */,
+				D0463C611BE64EEC008AE9F2 /* Resources */,
 				D0463C3F1BE64A8D008AE9F2 /* AppDelegate.swift */,
 				D0463C411BE64A8D008AE9F2 /* GameScene.sks */,
 				D0463C431BE64A8D008AE9F2 /* GameScene.swift */,
@@ -68,6 +84,27 @@
 				D0463C4F1BE64A8D008AE9F2 /* Info.plist */,
 			);
 			path = "Breaking Bricks";
+			sourceTree = "<group>";
+		};
+		D0463C611BE64EEC008AE9F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0463C551BE64B1F008AE9F2 /* ball.png */,
+				D0463C561BE64B1F008AE9F2 /* ball@2x.png */,
+				D0463C571BE64B1F008AE9F2 /* brick.png */,
+				D0463C581BE64B1F008AE9F2 /* brick@2x.png */,
+				D0463C591BE64B1F008AE9F2 /* paddle.png */,
+				D0463C5A1BE64B1F008AE9F2 /* paddle@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D05C3AD51BE6B117001351FF /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				D05C3AD61BE6B135001351FF /* Ball.swift */,
+			);
+			name = Sprites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0463C421BE64A8D008AE9F2 /* GameScene.sks in Resources */,
+				D0463C5C1BE64B1F008AE9F2 /* ball@2x.png in Resources */,
+				D0463C5D1BE64B1F008AE9F2 /* brick.png in Resources */,
+				D0463C5B1BE64B1F008AE9F2 /* ball.png in Resources */,
+				D0463C5F1BE64B1F008AE9F2 /* paddle.png in Resources */,
+				D0463C5E1BE64B1F008AE9F2 /* brick@2x.png in Resources */,
+				D0463C601BE64B1F008AE9F2 /* paddle@2x.png in Resources */,
 				D0463C4E1BE64A8D008AE9F2 /* LaunchScreen.storyboard in Resources */,
 				D0463C4B1BE64A8D008AE9F2 /* Assets.xcassets in Resources */,
 				D0463C491BE64A8D008AE9F2 /* Main.storyboard in Resources */,
@@ -143,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05C3AD71BE6B135001351FF /* Ball.swift in Sources */,
 				D0463C441BE64A8D008AE9F2 /* GameScene.swift in Sources */,
 				D0463C461BE64A8D008AE9F2 /* GameViewController.swift in Sources */,
 				D0463C401BE64A8D008AE9F2 /* AppDelegate.swift in Sources */,
@@ -293,6 +337,7 @@
 				D0463C541BE64A8D008AE9F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
