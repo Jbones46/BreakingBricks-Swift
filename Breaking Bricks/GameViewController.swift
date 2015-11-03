@@ -27,8 +27,11 @@ class GameViewController: UIViewController {
             scene.scaleMode = .ResizeFill
             
             skView.presentScene(scene)
+            prefersStatusBarHidden()
         }
     }
+   
+
 
     override func shouldAutorotate() -> Bool {
         return true

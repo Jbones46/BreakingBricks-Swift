@@ -8,28 +8,73 @@
 
 import SpriteKit
 
+let ballCategory: UInt32 = 0x1
+let brickCategory: UInt32 = 0x1 << 1
+let paddleCategory: UInt32 = 0x1 << 2
+let edgeCategory: UInt32 = 0x1 << 3
+let bottomEdgeCategory: UInt32 = 0x1 << 4
 
-
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
    let paddle = SKSpriteNode(imageNamed: "paddle")
     let ball = SKSpriteNode(imageNamed: "ball")
-    
+    let playBlip =  SKAction.playSoundFileNamed("blip.wav", waitForCompletion: false)
+    let playBrickHit =  SKAction.playSoundFileNamed("brickhit.wav", waitForCompletion: false)
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
         self.backgroundColor = SKColor.whiteColor()
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
-        
+        self.physicsBody?.categoryBitMask = edgeCategory
+        self.physicsWorld.contactDelegate = self
         
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         
         createBall()
         createPaddle()
+        createBricks()
+        addBottomEdge()
     }
     
 
-    
+    func didBeginContact(contact: SKPhysicsContact) {
+//     
+        
+        
+        
+        
+        
+        let notTheBall: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            
+            notTheBall = contact.bodyB
+        }else {
+            notTheBall = contact.bodyA
+        }
+        if notTheBall.categoryBitMask == brickCategory {
+            print("it's a brick")
+            self.runAction(playBrickHit)
+            notTheBall.node?.removeFromParent()
+            
+        }
+        if notTheBall.categoryBitMask == paddleCategory {
+            print("it's the paddle")
+           
+            self.runAction(playBlip)
+        }
+        if notTheBall.categoryBitMask == bottomEdgeCategory {
+            let label = SKLabelNode(fontNamed: "Futura Medium")
+            label.text = "YOU LOSE!"
+            label.fontColor = SKColor.blackColor()
+            label.fontSize = 50
+            label.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+            
+            self.addChild(label)
+            
+        }
+        
+        
+    }
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
@@ -39,8 +84,8 @@ class GameScene: SKScene {
         for touch in touches {
             
             let location = touch.locationInNode(self)
-            var newLocation = CGPointMake(location.x, size.height/4)
-            var previousLocation = touch.previousLocationInNode(self)
+            let newLocation = CGPointMake(location.x, size.height/4)
+            let previousLocation = touch.previousLocationInNode(self)
           var xPos = paddle.position.x + (newLocation.x - previousLocation.x)
             xPos = max(xPos, paddle.size.width/2)
             xPos = min(xPos, (size.width - (paddle.size.width / 2)))
@@ -69,6 +114,9 @@ class GameScene: SKScene {
         ball.physicsBody?.friction = 0
         ball.physicsBody?.linearDamping = 0
         ball.physicsBody?.restitution = 1
+        ball.physicsBody?.categoryBitMask = ballCategory
+        ball.physicsBody?.contactTestBitMask = brickCategory | paddleCategory | bottomEdgeCategory
+//        ball.physicsBody?.collisionBitMask = edgeCategory | brickCategory
         
         
         
@@ -83,9 +131,34 @@ class GameScene: SKScene {
         paddle.position = CGPointMake(size.width/2, size.height/4)
         paddle.physicsBody = SKPhysicsBody(rectangleOfSize: paddle.frame.size)
         paddle.physicsBody?.dynamic = false
+        paddle.physicsBody?.categoryBitMask = paddleCategory
         
         
         self.addChild(paddle)
+        
+    }
+    
+    func createBricks() {
+        for var i = 0; i < 5; i++ {
+            let brick = SKSpriteNode(imageNamed: "brick")
+            
+            brick.physicsBody = SKPhysicsBody(rectangleOfSize: brick.frame.size)
+            brick.physicsBody?.dynamic = false
+            brick.physicsBody?.categoryBitMask = brickCategory
+            let xPos = (size.width/5 - 10) * CGFloat(i + 1)
+            let yPos = size.height - 50
+            brick.position = CGPointMake(xPos, yPos)
+            self.addChild(brick)
+        }
+        
+    }
+    
+    func addBottomEdge() {
+        
+        let bottomEdge = SKNode()
+        bottomEdge.physicsBody = SKPhysicsBody(edgeFromPoint: CGPointMake(0, 1), toPoint: CGPointMake(size.width, 1))
+        bottomEdge.physicsBody?.categoryBitMask = bottomEdgeCategory
+        self.addChild(bottomEdge)
         
     }
     

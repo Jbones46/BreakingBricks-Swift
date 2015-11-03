@@ -20,6 +20,9 @@
 		D0463C5E1BE64B1F008AE9F2 /* brick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0463C581BE64B1F008AE9F2 /* brick@2x.png */; };
 		D0463C5F1BE64B1F008AE9F2 /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = D0463C591BE64B1F008AE9F2 /* paddle.png */; };
 		D0463C601BE64B1F008AE9F2 /* paddle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0463C5A1BE64B1F008AE9F2 /* paddle@2x.png */; };
+		D04F9B9B1BE9371E0007D1C2 /* blip.wav in Resources */ = {isa = PBXBuildFile; fileRef = D04F9B981BE9371E0007D1C2 /* blip.wav */; };
+		D04F9B9C1BE9371E0007D1C2 /* brickhit.wav in Resources */ = {isa = PBXBuildFile; fileRef = D04F9B991BE9371E0007D1C2 /* brickhit.wav */; };
+		D04F9B9D1BE9371E0007D1C2 /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = D04F9B9A1BE9371E0007D1C2 /* gameover.wav */; };
 		D05C3AD71BE6B135001351FF /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C3AD61BE6B135001351FF /* Ball.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,9 @@
 		D0463C581BE64B1F008AE9F2 /* brick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brick@2x.png"; path = "../brick@2x.png"; sourceTree = "<group>"; };
 		D0463C591BE64B1F008AE9F2 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paddle.png; path = ../paddle.png; sourceTree = "<group>"; };
 		D0463C5A1BE64B1F008AE9F2 /* paddle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "paddle@2x.png"; path = "../paddle@2x.png"; sourceTree = "<group>"; };
+		D04F9B981BE9371E0007D1C2 /* blip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blip.wav; sourceTree = "<group>"; };
+		D04F9B991BE9371E0007D1C2 /* brickhit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = brickhit.wav; sourceTree = "<group>"; };
+		D04F9B9A1BE9371E0007D1C2 /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover.wav; sourceTree = "<group>"; };
 		D05C3AD61BE6B135001351FF /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +95,9 @@
 		D0463C611BE64EEC008AE9F2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D04F9B981BE9371E0007D1C2 /* blip.wav */,
+				D04F9B991BE9371E0007D1C2 /* brickhit.wav */,
+				D04F9B9A1BE9371E0007D1C2 /* gameover.wav */,
 				D0463C551BE64B1F008AE9F2 /* ball.png */,
 				D0463C561BE64B1F008AE9F2 /* ball@2x.png */,
 				D0463C571BE64B1F008AE9F2 /* brick.png */,
@@ -170,9 +179,12 @@
 				D0463C5C1BE64B1F008AE9F2 /* ball@2x.png in Resources */,
 				D0463C5D1BE64B1F008AE9F2 /* brick.png in Resources */,
 				D0463C5B1BE64B1F008AE9F2 /* ball.png in Resources */,
+				D04F9B9B1BE9371E0007D1C2 /* blip.wav in Resources */,
 				D0463C5F1BE64B1F008AE9F2 /* paddle.png in Resources */,
 				D0463C5E1BE64B1F008AE9F2 /* brick@2x.png in Resources */,
 				D0463C601BE64B1F008AE9F2 /* paddle@2x.png in Resources */,
+				D04F9B9D1BE9371E0007D1C2 /* gameover.wav in Resources */,
+				D04F9B9C1BE9371E0007D1C2 /* brickhit.wav in Resources */,
 				D0463C4E1BE64A8D008AE9F2 /* LaunchScreen.storyboard in Resources */,
 				D0463C4B1BE64A8D008AE9F2 /* Assets.xcassets in Resources */,
 				D0463C491BE64A8D008AE9F2 /* Main.storyboard in Resources */,
