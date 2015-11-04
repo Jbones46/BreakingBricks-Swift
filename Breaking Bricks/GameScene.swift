@@ -53,23 +53,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         if notTheBall.categoryBitMask == brickCategory {
             print("it's a brick")
-            self.runAction(playBrickHit)
+          //  self.runAction(playBrickHit)
             notTheBall.node?.removeFromParent()
             
         }
         if notTheBall.categoryBitMask == paddleCategory {
             print("it's the paddle")
            
-            self.runAction(playBlip)
+           // self.runAction(playBlip)
         }
         if notTheBall.categoryBitMask == bottomEdgeCategory {
-            let label = SKLabelNode(fontNamed: "Futura Medium")
-            label.text = "YOU LOSE!"
-            label.fontColor = SKColor.blackColor()
-            label.fontSize = 50
-            label.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+           let end = EndScene(size: self.size, won: false)
+            self.view?.presentScene(end, transition: SKTransition.doorsCloseHorizontalWithDuration(0.5))
             
-            self.addChild(label)
+            
             
         }
         
