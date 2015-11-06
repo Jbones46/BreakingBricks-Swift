@@ -20,10 +20,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let playBlip =  SKAction.playSoundFileNamed("blip.wav", waitForCompletion: false)
     let playBrickHit =  SKAction.playSoundFileNamed("brickhit.wav", waitForCompletion: false)
     
+     let fire: SKEmitterNode = NSKeyedUnarchiver.unarchiveObjectWithFile(NSBundle.mainBundle().pathForResource("FireParticle", ofType: "sks")!)! as! SKEmitterNode
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        self.backgroundColor = SKColor.whiteColor()
+        self.backgroundColor = SKColor(colorLiteralRed: 0.15, green: 0.15, blue: 0.3, alpha: 1.0)
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         self.physicsBody?.categoryBitMask = edgeCategory
         self.physicsWorld.contactDelegate = self
@@ -34,6 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         createPaddle()
         createBricks()
         addBottomEdge()
+        addSnow()
     }
     
 
@@ -114,7 +117,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball.physicsBody?.categoryBitMask = ballCategory
         ball.physicsBody?.contactTestBitMask = brickCategory | paddleCategory | bottomEdgeCategory
 //        ball.physicsBody?.collisionBitMask = edgeCategory | brickCategory
-        
+        ball.addChild(fire)
         
         
         let myVector = CGVectorMake(10, 10)
@@ -156,6 +159,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bottomEdge.physicsBody = SKPhysicsBody(edgeFromPoint: CGPointMake(0, 1), toPoint: CGPointMake(size.width, 1))
         bottomEdge.physicsBody?.categoryBitMask = bottomEdgeCategory
         self.addChild(bottomEdge)
+        
+    }
+    func addSnow() {
+        let snow: SKEmitterNode = NSKeyedUnarchiver.unarchiveObjectWithFile(NSBundle.mainBundle().pathForResource("SnowParticle", ofType: "sks")!)! as! SKEmitterNode
+        
+        snow.position = CGPointMake(size.width/2, size.height)
+       // snow.advanceSimulationTime(10)
+        
+        self.addChild(snow)
+        
+        
         
     }
     

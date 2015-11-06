@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D001FD221BED414800F772E5 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = D001FD211BED414800F772E5 /* FireParticle.sks */; };
 		D0463C401BE64A8D008AE9F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0463C3F1BE64A8D008AE9F2 /* AppDelegate.swift */; };
 		D0463C421BE64A8D008AE9F2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D0463C411BE64A8D008AE9F2 /* GameScene.sks */; };
 		D0463C441BE64A8D008AE9F2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0463C431BE64A8D008AE9F2 /* GameScene.swift */; };
@@ -24,10 +25,13 @@
 		D04F9B9C1BE9371E0007D1C2 /* brickhit.wav in Resources */ = {isa = PBXBuildFile; fileRef = D04F9B991BE9371E0007D1C2 /* brickhit.wav */; };
 		D04F9B9D1BE9371E0007D1C2 /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = D04F9B9A1BE9371E0007D1C2 /* gameover.wav */; };
 		D04F9BA11BE93F530007D1C2 /* EndScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F9BA01BE93F530007D1C2 /* EndScene.swift */; };
+		D04F9BA41BEA3FDE0007D1C2 /* SnowParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = D04F9BA21BEA3FDE0007D1C2 /* SnowParticle.sks */; };
+		D04F9BA51BEA3FDE0007D1C2 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D04F9BA31BEA3FDE0007D1C2 /* spark.png */; };
 		D05C3AD71BE6B135001351FF /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C3AD61BE6B135001351FF /* Ball.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D001FD211BED414800F772E5 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
 		D0463C3C1BE64A8D008AE9F2 /* Breaking Bricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breaking Bricks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0463C3F1BE64A8D008AE9F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0463C411BE64A8D008AE9F2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		D04F9B991BE9371E0007D1C2 /* brickhit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = brickhit.wav; sourceTree = "<group>"; };
 		D04F9B9A1BE9371E0007D1C2 /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover.wav; sourceTree = "<group>"; };
 		D04F9BA01BE93F530007D1C2 /* EndScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndScene.swift; sourceTree = "<group>"; };
+		D04F9BA21BEA3FDE0007D1C2 /* SnowParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowParticle.sks; sourceTree = "<group>"; };
+		D04F9BA31BEA3FDE0007D1C2 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		D05C3AD61BE6B135001351FF /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +97,9 @@
 				D0463C4C1BE64A8D008AE9F2 /* LaunchScreen.storyboard */,
 				D0463C4F1BE64A8D008AE9F2 /* Info.plist */,
 				D04F9BA01BE93F530007D1C2 /* EndScene.swift */,
+				D04F9BA21BEA3FDE0007D1C2 /* SnowParticle.sks */,
+				D04F9BA31BEA3FDE0007D1C2 /* spark.png */,
+				D001FD211BED414800F772E5 /* FireParticle.sks */,
 			);
 			path = "Breaking Bricks";
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04F9BA41BEA3FDE0007D1C2 /* SnowParticle.sks in Resources */,
 				D0463C421BE64A8D008AE9F2 /* GameScene.sks in Resources */,
 				D0463C5C1BE64B1F008AE9F2 /* ball@2x.png in Resources */,
 				D0463C5D1BE64B1F008AE9F2 /* brick.png in Resources */,
@@ -186,7 +196,9 @@
 				D0463C5F1BE64B1F008AE9F2 /* paddle.png in Resources */,
 				D0463C5E1BE64B1F008AE9F2 /* brick@2x.png in Resources */,
 				D0463C601BE64B1F008AE9F2 /* paddle@2x.png in Resources */,
+				D001FD221BED414800F772E5 /* FireParticle.sks in Resources */,
 				D04F9B9D1BE9371E0007D1C2 /* gameover.wav in Resources */,
+				D04F9BA51BEA3FDE0007D1C2 /* spark.png in Resources */,
 				D04F9B9C1BE9371E0007D1C2 /* brickhit.wav in Resources */,
 				D0463C4E1BE64A8D008AE9F2 /* LaunchScreen.storyboard in Resources */,
 				D0463C4B1BE64A8D008AE9F2 /* Assets.xcassets in Resources */,
